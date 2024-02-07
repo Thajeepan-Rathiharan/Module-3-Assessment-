@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: #333; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align logo and nav to opposite ends */
+    align-items: center; /* Vertically center items */
+}
+
+.logo img {
+    width: 200px; /* Adjust the width of the logo as needed */
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    background-blend-mode: darken;
+    background-size: cover;
+    color: white;
+    padding: 10px 180px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list li:last-child {
+    margin-right: 0;
+}
+
+/* Add these styles to your existing CSS file */
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative; /* Add relative positioning to create space for the underline */
+}
+
+.nav-list a:hover {
+    color: orange; /* Change the text color to orange on hover */
+}
+
+.nav-list a:hover::after {
+    content: '';
+    display: block;
+    height: 2px; /* Adjust the height of the underline as needed */
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.btn:hover {
+    background-color: #000;
+    /* Change the background color on hover */
+    color: #ffd700;
+}
