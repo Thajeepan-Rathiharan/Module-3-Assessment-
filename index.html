@@ -23,8 +23,8 @@
 
 <header class="header">
   <div class="container">
-    <nav>
-      <div>
+    <nav class="flex flex-ai-c flex-jc-sb">
+      <div class="navgations flex flex-ai-c">
         <div class="toggle-menu hide-for-desktop">
             <img src="img/icon-menu.svg" alt="Burger Menu" />
         </div>
@@ -53,10 +53,10 @@
       </div> <!-- menu bar for desktop - use css to hide it on mobile site! -->
 </div>
  
-<div>
-  <div>
-    <div>
-      <span></span>
+<div class="controls flex flex-ai-c">
+  <div class="cart">
+    <div class="cart-icon">
+      <span class="in-cart"></span>
       <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
         <title>Cart Icon</title>
         <path
@@ -66,19 +66,19 @@
         />
       </svg>
     </div>
-    <div>
-      <h3>Cart</h3>
-      <div>
-        <div></div>
+    <div class="cart-list-wrapper">
+      <h3 class="cart-heading">Cart</h3>
+      <div class="cart-content">
+        <div class="cart-list"></div>
         <button
           type="button"
-          aria-label="Check out">
+          aria-label="Check out" class="button checkout-btn">
           Checkout
         </button>
       </div>
     </div>
   </div>
-  <div>
+  <div class="user-account">
     <div class="user-avater">
       <img src="img/image-avatar.png" alt="User Avater" />
     </div>
@@ -88,52 +88,51 @@
 </div>
 </header>
 
-<main>
-  <section>
-    <div>
-      <div>
-        <div>
+<main class="main">
+  <section class="product-wrapper">
+    <div class="container">
+      <div class="product-images-wrapper">
+        <div class="preview-image-wrapper">
           <img
             src="img/image-product-1.jpg"
             class="preview-image"
-            alt="Product Image"
-          />
-          <div>
-            <div>
+            alt="Product Image"/>
+          <div class="arrows hide-for-desktop">
+            <div class="next">
               <img src="img/icon-next.svg" alt="Next Icon" />
             </div>
-            <div>
+            <div class="prev">
               <img src="img/icon-previous.svg" alt="Previous Icon" />
             </div>
           </div>
-          <div>
+          <div class="count">
             <p>
-              <span></span> of
-              <span></span>
+              <span class="current"></span> of
+              <span class="total"></span>
             </p>
           </div>
         </div>
 
-        <div>
-          <div>
+        <div class="thumbs-wrapper hide-for-mobile">
+          <div class="thumb-image active">
             <img
               src="img/image-product-1-thumbnail.jpg"
               alt="Product Thumb Image"
             />
           </div>
-          <div>
+          <div class="thumb-image">
             <img
               src="img/image-product-2-thumbnail.jpg"
               alt="Product Thumb Image"
             />
           </div>
-          <div>
+          <div class="thumb-image">
             <img
               src="img/image-product-3-thumbnail.jpg"
               alt="Product Thumb Image"
             />
           </div>
-          <div>
+          <div class="thumb-image">
             <img
               src="img/image-product-4-thumbnail.jpg"
               alt="Product Thumb Image"
@@ -141,42 +140,42 @@
           </div>
         </div>
       </div>
-      <div>
-        <p>Sneaker Company</p>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
+      <div class="product-details-wrapper">
+        <p class="product-brand">Sneaker Company</p>
+        <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+        <p class="product-description">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand
           everything the weather can offer.
         </p>
       
-<div>
-  <div>
-    <h2>$125.00</h2>
-      <span>50%</span>
+<div class="product-price">
+  <div class="current-price-wrapper">
+    <h2 class="current-price">$125.00</h2>
+      <span class="discount">50%</span>
 </div>
-<div>
-  <span>$250.00</span>
+<div class="previous-price-wrapper">
+  <span class="previous-price">$250.00</span>
   </div>
 </div>
 
-<form action="#">
-  <div>
-    <button type="button">
+<form action="#" class="add-to-cart-form">
+  <div class="product-quantity">
+    <button type="button" class="button minus">
       <img src="img/icon-minus.svg" alt="Minus Icon" />
     </button>
-<span>0</span>
-    <button type="button">
+<span class="product-quantity-num">0</span>
+    <button type="button" class="button plus">
       <img src="img/icon-plus.svg" alt="Plus Icon" />
     </button>
 </div>
 
-<button type="submit" aria-label="Add to cart">
-  <img src="img/icon-cart.svg" alt="" /> 
+<button type="submit" aria-label="Add to cart" class="button add-btn">
+  <img src="img/icon-cart.svg" alt="Add to cart button" /> 
   Add to cart
 </button>
 
-<p></p> <!-- have a function that tells the user they added the product to their cart here -->
+<p class="form-alert"></p> <!-- have a function that tells the user they added the product to their cart here -->
 </form>
 </div>
 </div>
@@ -185,13 +184,13 @@
 </main>
 
 <!-- LightBox -->
-<div>
-  <div>
+<div class="lightbox-wrapper">
+  <div class="lightbox-content">
   </div>
 </div>
 
 <!-- Overlay -->
-<div></div>
+<div class="overlay"></div>
   
 
 <!--  <div class="attribution">
