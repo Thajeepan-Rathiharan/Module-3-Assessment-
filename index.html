@@ -21,19 +21,19 @@
 </head>
 <body>
 
-  <header>
-    <div>
-      <nav>
-        <div>
-          <div>
-            <img src="img/icon-menu.svg" alt="Burger Menu" />
-          </div>
-
-<div>
-  <img src="img/logo.svg" alt="Sneakers Logo" />
-      </div>
-
+<header class="header">
+  <div class="container">
+    <nav>
       <div>
+        <div class="toggle-menu hide-for-desktop">
+            <img src="img/icon-menu.svg" alt="Burger Menu" />
+        </div>
+
+<div class="logo">
+  <img src="img/logo.svg" alt="Sneakers Logo" />
+</div>
+
+      <div class="main-navigation hide-for-mobile">
         <a href="#">Collections</a>
         <a href="#">Men</a>
         <a href="#">Women</a>
@@ -41,8 +41,8 @@
         <a href="#">Contact</a>
       </div> <!-- menu bar for mobile - use css to hide it when viewing on desktop site! -->
 
-<div>
-  <div>
+<div class="mobile-navgation hide-for-desktop">
+  <div class="close-menu">
     <img src="img/icon-close.svg" alt="Close Icon" />
       </div>
         <a href="#">Collections</a>
