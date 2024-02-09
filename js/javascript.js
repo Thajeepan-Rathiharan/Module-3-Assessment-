@@ -78,3 +78,17 @@ function showAsActive() {
     }
     showAsActive(activeImage);
   }
+
+  // A function that counts what image the user is on out of the 4 images. //
+function imageNumber() {
+    let currentImage = document.querySelector(
+      ".preview-image-wrapper .count .current"
+    );
+    let totalImage = document.querySelector(
+      ".preview-image-wrapper .count .total"
+    );
+  
+    currentImage.textContent = currentIndex + 1;
+    totalImage.textContent = thumbImagesDivs.length;
+  }
+  imageNumber();
