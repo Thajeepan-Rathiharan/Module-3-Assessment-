@@ -51,3 +51,30 @@ function showThumbsAsActive(thumbnails, previewActive) {
     });
   }
   showThumbsAsActive(thumbImagesDivs, activeImage);
+
+  // This function is to set the active image. //
+function showAsActive() {
+    activeImage.src = thumbImagesDivs[currentIndex].dataset.original;
+    // Control Thumb styles
+    removeClass(thumbImagesDivs, "active");
+    thumbImagesDivs[currentIndex].classList.add("active");
+    imageNumber();
+  }
+  
+  // This function is to show the next image(s). //
+  function nextImage() {
+    currentIndex++;
+    if (currentIndex >= thumbImagesDivs.length) {
+      currentIndex = 0;
+    }
+    showAsActive();
+  }
+  
+  // This function is to show the previous image(s). //
+  function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = thumbImagesDivs.length - 1;
+    }
+    showAsActive(activeImage);
+  }
