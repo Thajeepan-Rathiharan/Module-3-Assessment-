@@ -20,4 +20,17 @@ let thumbImagesDivs = Array.from(
   let lightBoxContent = lightBoxWrapper.querySelector(".lightbox-content");
   let currentIndex = 0;
 
-  
+// This function is what tells the browser what image to set as the thumbnail image next to the text above the 4 images on the preview set of images. //  
+  function handleThumbsSrc() {
+    thumbImagesDivs.forEach((thumb) => {
+      // Get The Image
+      let thumbImage = thumb.querySelector("img");
+      // Set Original Image Source as Data Atrribute On The Thumb After Removing [-thumbnail] String.
+      let setOriginalSrc = thumbImage
+        .getAttribute("src")
+        .replace("-thumbnail", "");
+      // Set Original Image Source as Data Atrribute On The Thumb
+      thumb.dataset.original = setOriginalSrc;
+    });
+  }
+  handleThumbsSrc();
