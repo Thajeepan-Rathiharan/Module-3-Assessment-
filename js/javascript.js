@@ -34,3 +34,20 @@ let thumbImagesDivs = Array.from(
     });
   }
   handleThumbsSrc();
+   
+  // This function is to show the user the clicked thumbnail on the preview image wrapper. //
+function showThumbsAsActive(thumbnails, previewActive) {
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        // Get Original Src Of the Thumb Image
+        let getOriginalSrc = thumb.dataset.original;
+        previewActive.setAttribute("src", getOriginalSrc);
+        // Get The Index Of the Current Image
+        currentIndex = thumbnails.indexOf(thumb);
+        // Control Thumb styles
+        removeClass(thumbnails, "active");
+        thumb.classList.add("active");
+      });
+    });
+  }
+  showThumbsAsActive(thumbImagesDivs, activeImage);
