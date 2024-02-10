@@ -164,3 +164,13 @@ function formAlert(message, status) {
     addToCartForm.classList.remove("alert");
   }, 5000);
 }
+
+// Function to open the mobile menu on mobile devices. //
+function openMobileMenu() {
+  mobileNavigation.classList.add("open");
+}
+
+// A function to close the mobile menu on mobile devices. //
+function closeMobileMenu() {
+  mobileNavigation.classList.remove("open");
+}
