@@ -337,6 +337,7 @@ function deleteFromCart() {
   });
 }
 
+// Events for the cart. //
 cart.addEventListener("click", (e) => {
   let cartIcon = e.target.closest(".cart-icon");
   cartIcon ? cart.classList.toggle("open") : "";
@@ -349,4 +350,21 @@ plusBtn.addEventListener("click", () => {
 
 minusBtn.addEventListener("click", () => {
   if (productQuantity.textContent != 0) productQuantity.textContent--;
+});
+
+// Lightbox functions. //
+
+// Function that opens the light box. //
+function openLightBox() {
+  lightBoxWrapper.classList.add("open");
+}
+
+// Function that closes the light box. //
+function closeLightBox() {
+  lightBoxWrapper.classList.remove("open");
+}
+
+// This also closes the light box when the user clicks on the overlay. //
+lightBoxWrapper.addEventListener("click", (e) => {
+  if (e.currentTarget == e.target) closeLightBox();
 });
