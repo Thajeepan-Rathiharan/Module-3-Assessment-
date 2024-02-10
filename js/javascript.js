@@ -184,3 +184,8 @@ function openOverlay() {
 function closeOverlay() {
   overlay.classList.remove("open");
 }
+
+// This closes the overlay when the user clicks on the overlay layer. //
+overlay.addEventListener("click", (e) => {
+  if (e.currentTarget == e.target) closeOverlay(), closeMobileMenu();
+});
