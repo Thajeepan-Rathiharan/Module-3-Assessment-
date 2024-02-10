@@ -204,3 +204,27 @@ window.addEventListener("resize", () => {
   }
 });
 
+// Opens the lightBox when clicking on the active image for screens greater than >= (or equal to) 640px. //
+activeImage.addEventListener("click", () => {
+  if (window.innerWidth >= 640) {
+    openLightBox();
+    cloneSlider();
+  } else {
+    return false;
+  }
+});
+
+nextBtn.addEventListener("click", nextImage);
+
+prevBtn.addEventListener("click", prevImage);
+
+toggleMenu.addEventListener("click", () => {
+  openMobileMenu();
+  openOverlay();
+});
+
+closeMobileNavigation.addEventListener("click", () => {
+  closeMobileMenu();
+  closeOverlay();
+});
+
