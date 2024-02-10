@@ -1,123 +1,120 @@
-// TO DO - make functions for: lightbox for images, images changing upon arrow buttons being clicked on, images rotating back to the first image, image number counter, burger menu on mobile devices, add image of product to cart with quantity counter, checkout button, text when product is added to cart, delete product icon, click on cart icon to open users cart and hide it by clicking on the cart icon again. // 
-
-// Here is a variable to make the navigation menu on the mobile device have the ability to close and there will be slideshow thumbnails available on the desktop devices by an overlay. //
-// Also buttons have been added to the pop up images with arrows that users can click on to go through the set of images. //
+/*
+    VARIABLES
+*/
 let thumbImagesDivs = Array.from(
-    document.querySelectorAll(".product-images-wrapper .thumb-image")
-  );
-  let activeImage = document.querySelector(
-    ".product-images-wrapper .preview-image"
-  );
-  let toggleMenu = document.querySelector(".header .toggle-menu");
-  let mobileNavigation = document.querySelector(".header .mobile-navigation");
-  let closeMobileNavigation = document.querySelector(
-    ".header .mobile-navigation .close-menu"
-  );
-  let overlay = document.querySelector(".overlay");
-  let nextBtn = document.querySelector(".preview-image-wrapper .arrows .next");
-  let prevBtn = document.querySelector(".preview-image-wrapper .arrows .prev");
-  let lightBoxWrapper = document.querySelector(".lightbox-wrapper");
-  let lightBoxContent = lightBoxWrapper.querySelector(".lightbox-content");
-  let currentIndex = 0;
+  document.querySelectorAll(".product-images-wrapper .thumb-image")
+);
+let activeImage = document.querySelector(
+  ".product-images-wrapper .preview-image"
+);
+let toggleMenu = document.querySelector(".header .toggle-menu");
+let mobileNavigation = document.querySelector(".header .mobile-navigation");
+let closeMobileNavigation = document.querySelector(
+  ".header .mobile-navigation .close-menu"
+);
+let overlay = document.querySelector(".overlay");
+let nextBtn = document.querySelector(".preview-image-wrapper .arrows .next");
+let prevBtn = document.querySelector(".preview-image-wrapper .arrows .prev");
+let lightBoxWrapper = document.querySelector(".lightbox-wrapper");
+let lightBoxContent = lightBoxWrapper.querySelector(".lightbox-content");
+let currentIndex = 0;
 
-// This function is what tells the browser what image to set as the thumbnail image next to the text above the 4 images on the preview set of images. //  
-  function handleThumbsSrc() {
-    thumbImagesDivs.forEach((thumb) => {
-      // Get The Image
-      let thumbImage = thumb.querySelector("img");
-      // Set Original Image Source as Data Atrribute On The Thumb After Removing [-thumbnail] String.
-      let setOriginalSrc = thumbImage
-        .getAttribute("src")
-        .replace("-thumbnail", "");
-      // Set Original Image Source as Data Atrribute On The Thumb
-      thumb.dataset.original = setOriginalSrc;
-    });
-  }
-  handleThumbsSrc();
-   
-  // This function is to show the user the clicked thumbnail on the preview image wrapper. //
+/*
+      FUNCTIONS
+  */
+
+// Add Original Image Src As data Sttribute On ['.thumb-image'] Div
+function handleThumbsSrc() {
+  thumbImagesDivs.forEach((thumb) => {
+    // Get The Image
+    let thumbImage = thumb.querySelector("img");
+    // Set Original Image Source as Data Atrribute On The Thumb After Removeing [-thumbnail] String.
+    let setOriginalSrc = thumbImage
+      .getAttribute("src")
+      .replace("-thumbnail", "");
+    // Set Original Image Source as Data Atrribute On The Thumb
+    thumb.dataset.original = setOriginalSrc;
+  });
+}
+handleThumbsSrc();
+
+// Show Clicked Thumbnail On The Preview Image Wrapper
 function showThumbsAsActive(thumbnails, previewActive) {
-    thumbnails.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        // Get Original Src Of the Thumb Image
-        let getOriginalSrc = thumb.dataset.original;
-        previewActive.setAttribute("src", getOriginalSrc);
-        // Get The Index Of the Current Image
-        currentIndex = thumbnails.indexOf(thumb);
-        // Control Thumb styles
-        removeClass(thumbnails, "active");
-        thumb.classList.add("active");
-      });
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      // Get Original Src Of the Thumb Image
+      let getOriginalSrc = thumb.dataset.original;
+      previewActive.setAttribute("src", getOriginalSrc);
+      // Get The Index Of the Current Image
+      currentIndex = thumbnails.indexOf(thumb);
+      // Control Thumb styles
+      removeClass(thumbnails, "active");
+      thumb.classList.add("active");
     });
-  }
-  showThumbsAsActive(thumbImagesDivs, activeImage);
+  });
+}
+showThumbsAsActive(thumbImagesDivs, activeImage);
 
-  // This function is to set the active image. //
+// Set The Active Image
 function showAsActive() {
-    activeImage.src = thumbImagesDivs[currentIndex].dataset.original;
-    // Control Thumb styles
-    removeClass(thumbImagesDivs, "active");
-    thumbImagesDivs[currentIndex].classList.add("active");
-    imageNumber();
-  }
-  
-  // This function is to show the next image(s). //
-  function nextImage() {
-    currentIndex++;
-    if (currentIndex >= thumbImagesDivs.length) {
-      currentIndex = 0;
-    }
-    showAsActive();
-  }
-  
-  // This function is to show the previous image(s). //
-  function prevImage() {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = thumbImagesDivs.length - 1;
-    }
-    showAsActive(activeImage);
-  }
-
-  // A function that counts what image the user is on out of the 4 images. //
-function imageNumber() {
-    let currentImage = document.querySelector(
-      ".preview-image-wrapper .count .current"
-    );
-    let totalImage = document.querySelector(
-      ".preview-image-wrapper .count .total"
-    );
-  
-    currentImage.textContent = currentIndex + 1;
-    totalImage.textContent = thumbImagesDivs.length;
-  }
+  activeImage.src = thumbImagesDivs[currentIndex].dataset.original;
+  // Control Thumb styles
+  removeClass(thumbImagesDivs, "active");
+  thumbImagesDivs[currentIndex].classList.add("active");
   imageNumber();
+}
 
-// Function for showing arrows on images. //  
+// Show Next Image Function
+function nextImage() {
+  currentIndex++;
+  if (currentIndex >= thumbImagesDivs.length) {
+    currentIndex = 0;
+  }
+  showAsActive();
+}
 
-// This function selects the image that shows the image when clicking on one of the 4 images below the previewed image. //
+// Show Previous Image Function
+function prevImage() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = thumbImagesDivs.length - 1;
+  }
+  showAsActive(activeImage);
+}
+
+// Stats About The Images
+function imageNumber() {
+  let currentImage = document.querySelector(
+    ".preview-image-wrapper .count .current"
+  );
+  let totalImage = document.querySelector(
+    ".preview-image-wrapper .count .total"
+  );
+
+  currentImage.textContent = currentIndex + 1;
+  totalImage.textContent = thumbImagesDivs.length;
+}
+imageNumber();
+
+// CONTINUE COPY AND PASTING FROM HERE FOR PROJECT 3!!! //
 function cloneSlider() {
   lightBoxContent.innerHTML = "";
   let elementToClone = document.querySelector(".product-images-wrapper");
   let clonedElement = elementToClone.cloneNode(true);
-  // Gets the preview image wrapper class here. //
+  // Get Preview Image Wrapper
   let previewImageWrapper = clonedElement.querySelector(
     ".preview-image-wrapper"
   );
-  // Gets the arrows wrapper elements. //
+  // Get Arrows Wrapper
   let arrowsWrapper = clonedElement.querySelector(".arrows");
-  // Gets the thumbnails images wrapper elements. //
+  // Get Thumbnails Images Wrapper
   let thumbsWrapper = clonedElement.querySelector(".thumbs-wrapper");
 
-  // Remove ['.hide-for-desktop'] Class Of Arrows Div //
+  // Remove ['.hide-for-desktop'] Class Of Arrows Div
   arrowsWrapper.classList.remove("hide-for-desktop");
-
-  // Remove ['.hide-for-mobile'] Class Of Thumbnails Images Div //
+  // Remove ['.hide-for-mobile'] Class Of Thumbnails Images Div
   thumbsWrapper.classList.remove("hide-for-mobile");
-
-// Buttons for closing function. //
-
-  // Adds a close button here. //
+  // Add Close Button
   previewImageWrapper.innerHTML += `
   <div class="close-lightbox">
     <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -130,12 +127,10 @@ function cloneSlider() {
     </svg>
   </div>
   `;
-
-  // Declares the close button here. //
+  // Declare Close Button
   let closeBtn = previewImageWrapper.querySelector(".close-lightbox");
   lightBoxContent.appendChild(clonedElement);
-
-  // This function is to close the light box by making an [x] close icon. //
+  // Close Light Box By [x] Close Icon
   closeBtn.addEventListener("click", closeLightBox);
   thumbImagesDivs = Array.from(
     document.querySelectorAll(".lightbox-content .thumb-image")
@@ -152,14 +147,14 @@ function cloneSlider() {
   });
 }
 
-// The function here is to remove active classes. //
+// Remove Active classes
 function removeClass(array, className) {
   array.forEach((element) => {
     element.classList.remove(className);
   });
 }
 
-// This function is to show the user an alert when the form is submitted when the user clicks the 'add to cart' button. //
+// Show Form alerts
 function formAlert(message, status) {
   formValidation.textContent = message;
   formValidation.className = `form-alert ${status}`;
@@ -169,48 +164,49 @@ function formAlert(message, status) {
   }, 5000);
 }
 
-// Burger menu bar for mobile devices. //
-
-// Function to open the mobile menu on mobile devices. //
+// Open Mobile Menu
 function openMobileMenu() {
   mobileNavigation.classList.add("open");
 }
 
-// A function to close the mobile menu on mobile devices. //
+// Close Mobile Menu
 function closeMobileMenu() {
   mobileNavigation.classList.remove("open");
 }
 
-// Function to open the overlay. //
+// Open Overlay
 function openOverlay() {
   overlay.classList.add("open");
 }
 
-// Function to close the overlay. //  
+// Close Overlay
 function closeOverlay() {
   overlay.classList.remove("open");
 }
 
-// This closes the overlay when the user clicks on the overlay layer. //
+// close Overlay When Click On the Overlay Layer
 overlay.addEventListener("click", (e) => {
   if (e.currentTarget == e.target) closeOverlay(), closeMobileMenu();
 });
+/*
+      EVENTS
+  */
 
-// This event hides the lightBox on screens smaller than < 640px. //
+// Hide LightBox on Screens Smaller Than < 640px
 window.addEventListener("resize", () => {
   if (window.innerWidth < 640) {
     closeLightBox();
   }
 });
 
-// The event here hides the 'MobileMenu' (burger menu) on screens bigger than > 1024px. //
+// Hide MobileMenu on Screens Greater Than < 1024px
 window.addEventListener("resize", () => {
   if (window.innerWidth > 1024) {
     closeMobileMenu();
   }
 });
 
-// Opens the lightBox when clicking on the active image for screens greater than >= (or equal to) 640px. //
+// Open LightBox When Click Active Image For Screens Greater Than >= 640px
 activeImage.addEventListener("click", () => {
   if (window.innerWidth >= 640) {
     openLightBox();
@@ -234,10 +230,12 @@ closeMobileNavigation.addEventListener("click", () => {
   closeOverlay();
 });
 
+/*
+  CART FUNCTIONS
+*/
 
-// Cart features //
+// VARIABLES
 
-// Variables for the cart features. //
 let cart = document.querySelector(".cart");
 let cartcontent = document.querySelector(".cart-content");
 let cartList = document.querySelector(".cart-content .cart-list");
@@ -252,7 +250,9 @@ let productQuantity = document.querySelector(
 let plusBtn = document.querySelector(".add-to-cart-form .plus");
 let minusBtn = document.querySelector(".add-to-cart-form .minus");
 
-// Function to add items to the cart and shows the price of the item too. //
+// FUNCTIONS
+
+// Add Product To Cart
 function addToCart() {
   addToCartForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -261,11 +261,11 @@ function addToCart() {
       let productTitle = document.querySelector(
         ".product-details-wrapper .product-title"
       ).textContent;
-      // First uses the thumbnail image as the product image once added in the cart. //
+      // Use First Thumbnail Image As Product Image In the Cart
       let productThumb = thumbImagesDivs[0]
         .querySelector("img")
         .getAttribute("src");
-      // productThumb = productThumb.querySelector("img").src; //
+      // productThumb = productThumb.querySelector("img").src;
       let productPrice = document
         .querySelector(".product-details-wrapper .current-price")
         .textContent.replace("$", "");
@@ -299,7 +299,7 @@ function addToCart() {
           />
         </div>
       </div>
-      `; // The above HTML set up is a template literal. It's used to define the HTML structure within the JavaScript code, which takes place when the function is in play, which in this case is when an item is added to the cart and the template literal adds the image thumbnail and its price. //
+      `;
       deleteFromCart();
       inCartCount();
       formAlert(`Product has been added to your cart successfully`, "success");
@@ -310,7 +310,7 @@ function addToCart() {
 }
 addToCart();
 
-// This funcion enables the cart products to be counted quantity wise. //
+// Show Cart Product's Count
 function inCartCount() {
   let productsCount = cartList.childElementCount;
   inCart.textContent = productsCount;
@@ -326,7 +326,7 @@ function inCartCount() {
 }
 inCartCount();
 
-// The function here is to enable the user to delete products in their cart. //
+// Delete Cart Product Function
 function deleteFromCart() {
   cartcontent.querySelectorAll(".cart-item").forEach((product) => {
     product.addEventListener("click", (e) => {
@@ -337,13 +337,14 @@ function deleteFromCart() {
   });
 }
 
-// Events for the cart. //
+// EVENTS
+
 cart.addEventListener("click", (e) => {
   let cartIcon = e.target.closest(".cart-icon");
   cartIcon ? cart.classList.toggle("open") : "";
 });
 
-// This event handles how many items will be added via the plus [+] and minus [-] buttons. //
+// Handle How Many Items will Be Added By Plus [+] and [-] Buttons
 plusBtn.addEventListener("click", () => {
   productQuantity.textContent++;
 });
@@ -352,19 +353,23 @@ minusBtn.addEventListener("click", () => {
   if (productQuantity.textContent != 0) productQuantity.textContent--;
 });
 
-// Lightbox functions. //
+/*
+  LIGHTBOX FUNCTIONS
+*/
 
-// Function that opens the light box. //
+// FUNCTIONS
+
+// Open Light Box Function
 function openLightBox() {
   lightBoxWrapper.classList.add("open");
 }
 
-// Function that closes the light box. //
+// Close Light Box Function
 function closeLightBox() {
   lightBoxWrapper.classList.remove("open");
 }
 
-// This also closes the light box when the user clicks on the overlay. //
+// close Light Box When Click On the Overlay
 lightBoxWrapper.addEventListener("click", (e) => {
   if (e.currentTarget == e.target) closeLightBox();
 });
