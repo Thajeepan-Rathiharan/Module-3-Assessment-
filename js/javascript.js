@@ -174,3 +174,13 @@ function openMobileMenu() {
 function closeMobileMenu() {
   mobileNavigation.classList.remove("open");
 }
+
+// Function to open the overlay. //
+function openOverlay() {
+  overlay.classList.add("open");
+}
+
+// Function to close the overlay. //  
+function closeOverlay() {
+  overlay.classList.remove("open");
+}
