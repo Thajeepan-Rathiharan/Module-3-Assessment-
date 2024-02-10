@@ -154,3 +154,13 @@ function removeClass(array, className) {
     element.classList.remove(className);
   });
 }
+
+// This function is to show the user an alert when the form is submitted when the user clicks the 'add to cart' button. //
+function formAlert(message, status) {
+  formValidation.textContent = message;
+  formValidation.className = `form-alert ${status}`;
+  addToCartForm.classList.add(`alert`);
+  setTimeout(() => {
+    addToCartForm.classList.remove("alert");
+  }, 5000);
+}
