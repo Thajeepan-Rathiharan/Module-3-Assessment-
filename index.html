@@ -1,12 +1,31 @@
+<!-- The DOCTYPE element at the start of the HTML tells the browser that the document that it loads up is a HTML. -->
 <!DOCTYPE html>
+
+<!-- <html> </html> Tells the browser what is inside the html such as the element below that tells it the language the text on the page(s) needs to be is in English and is written 'en'. -->
 <html lang="en">
+
+<!-- The <head> element is where additional information about the page is put in such as the adding external css scripts, external fonts from sites such as Google fonts and the title of the page that will appear on the tab, alongside properties of the size the content can be viewed. -->
 <head>
+
+<!-- The charset <meta> tag tells the browser to reword the code into text that users can read. -->
 <meta charset="UTF-8" />
+
+<!-- The charset <meta> tag here tells the browser to use the latest engine to show the web page to the user(s). -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- The name <meta> tag tells the broswer the measurements of the page so that it doesn't have a bad structure with everything all over the place. -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- The name <meta> tag tells the browser a short description of what the page contains. -->
 <meta name="description" content="E-Commerce page for my third project made using HTML, CSS and JavaScript" />
+
+<!-- The name <meta> tag tells the browser a keywords that can be searched up for on the internet for this website to appear. -->
 <meta name="keywords" content="e-commerce, frontend developer, coding task" />
+
+<!-- The name <meta> tag tells the browser the author of the website and the content on it. -->
 <meta name="author" content="Thajeepan Rathiharan" />
+
+<!-- The following line in the <link> tag are to create an icon next to the title of the web page in the browser tab. -->
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/>
 
 <!-- Google Fonts links -->
@@ -28,10 +47,12 @@
 <img src="img/icon-menu.svg" alt="Burger Menu" />
 </div>
 
+<!-- This div class contains the logo for the webpage, which in this case is the brand name.  -->
 <div class="logo">
 <img src="img/logo.svg" alt="Sneakers Logo" />
 </div>
 
+<!-- This div class contains the menu bar for the desktop version of the site which will be hidden on mobile platforms and will only visible for desktop platforms using CSS and JavaScript. -->
 <div class="main-navigation hide-for-mobile">
 <a href="#">Collections</a>
 <a href="#">Men</a>
@@ -40,6 +61,7 @@
 <a href="#">Contact</a>
 </div>
 
+<!-- This div class contains the menu bar for the mobile version of the site which will be hidden on desktop platforms and will only visible for mobile platforms using CSS and JavaScript. -->
 <div class="mobile-navigation hide-for-desktop">
 <div class="close-menu">
 <img src="img/icon-close.svg" alt="Close Icon" />
@@ -52,6 +74,7 @@
 </div>
 </div>
 
+<!-- This is the div tags with content for the cart icon on the webpage. -->
 <div class="controls flex flex-ai-c">
 <div class="cart">
 <div class="cart-icon">
@@ -73,9 +96,10 @@
 </div>
 </div>
 
+<!-- This is the div tags with content for the user avatar icon on the webpage. -->
 <div class="user-account">
-<div class="user-avater">
-<img src="img/image-avatar.png" alt="User Avater" />
+<div class="user-avatar">
+<img src="img/image-avatar.png" alt="User Avatar" />
 </div>
 </div>
 </div>
