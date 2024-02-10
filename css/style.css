@@ -150,7 +150,7 @@ button:hover,
   gap: 22px;
 }
 
-.header .user-avater {
+.header .user-avatar {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -160,11 +160,11 @@ button:hover,
   transition: 0.2s linear;
 }
 
-.header .user-avater:hover {
+.header .user-avatar:hover {
   border-color: #ff7d1a;
 }
   
-.header .user-avater img {
+.header .user-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -719,7 +719,7 @@ button:hover,
   .header .controls {
   gap: 40px;
   }
-  .header .user-avater {
+  .header .user-avatar {
   width: 50px;
   height: 50px;
   }
