@@ -189,3 +189,18 @@ function closeOverlay() {
 overlay.addEventListener("click", (e) => {
   if (e.currentTarget == e.target) closeOverlay(), closeMobileMenu();
 });
+
+// This event hides the lightBox on screens smaller than < 640px. //
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 640) {
+    closeLightBox();
+  }
+});
+
+// The event here hides the 'MobileMenu' (burger menu) on screens bigger than > 1024px. //
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1024) {
+    closeMobileMenu();
+  }
+});
+
