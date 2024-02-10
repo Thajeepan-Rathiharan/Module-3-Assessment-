@@ -234,4 +234,20 @@ closeMobileNavigation.addEventListener("click", () => {
   closeOverlay();
 });
 
-// Functions for the cart features. //
+
+// Cart features //
+
+// Variables for the cart features. //
+let cart = document.querySelector(".cart");
+let cartcontent = document.querySelector(".cart-content");
+let cartList = document.querySelector(".cart-content .cart-list");
+let inCart = document.querySelector(".cart .in-cart");
+
+let addToCartForm = document.querySelector(".add-to-cart-form");
+let formValidation = document.querySelector(".add-to-cart-form .form-alert");
+let checkOutBtn = document.querySelector(".cart-list-wrapper .checkout-btn");
+let productQuantity = document.querySelector(
+  ".add-to-cart-form .product-quantity-num"
+);
+let plusBtn = document.querySelector(".add-to-cart-form .plus");
+let minusBtn = document.querySelector(".add-to-cart-form .minus");
