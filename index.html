@@ -36,10 +36,19 @@
 <!-- CSS file link-->
 <link rel="stylesheet" href="css/style.css" />
 
+<!-- The <title> tag shows the title of the HTML document on the broswer tab. -->
 <title>Frontend Mentor | E-commerce product page</title>
+
+<!-- The </head> tells the browser that the <head> element has come to an end. -->
 </head>
+
+<!-- The <body> element tells the browser what needs to be shown on the page, which in this case will be text and images. -->
 <body>
+
+<!-- Header elements-->   
 <header class="header">
+ 
+<!-- This div container contains the information for the burger menu that will be added for only the mobile platform, and will be made invisible to desktop users using CSS and JavaScript. -->  
 <div class="container">
 <nav class="flex flex-ai-c flex-jc-sb">
 <div class="navgations flex flex-ai-c">
@@ -107,6 +116,7 @@
 </div>
 </header>
 
+<!-- This is the div tags with the main content on the webpage which are the images of the trainers with div tags containg arrow keys for the user to click on to go back and forth between the images. -->
 <main class="main">
 <section class="product-wrapper">
 <div class="container">
@@ -129,6 +139,8 @@
 </div>
 </div>
 
+<!-- These divs contain the image overlay for when a user clicks on the image to view it at a bigger scale than it already is using a lightbox method which will be implemented using CSS and JavaScript.
+     Also this will me made available for only desktop platforms. -->
 <div class="thumbs-wrapper hide-for-mobile">
 <div class="thumb-image active">
 <img src="img/image-product-1-thumbnail.jpg" alt="Product Thumb Image"/>
@@ -144,6 +156,8 @@
 </div>
 </div>
 </div>
+
+<!-- This div contains the text on the webpage that gives a description of the use of the trainers to the viewers. -->
 <div class="product-details-wrapper">
 <p class="product-brabd">Sneaker Company</p>
 <h1 class="product-title">Fall Limited Edition Sneakers</h1>
@@ -153,6 +167,7 @@
     everything the weather can offer.
 </p>
 
+<!-- This set of div tags contain the text for the original price and discounted price of the product. -->
 <div class="product-price">
 <div class="current-price-wrapper">
 <h2 class="current-price">$125.00</h2>
@@ -163,6 +178,7 @@
 </div>
 </div>
 
+<!-- A form is put here to enable users to add the product to their cart and delete it if they wish to, and with JavaScript the functions will prompt a message once their product is added to their cart. -->
 <form action="#" class="add-to-cart-form">
 <div class="product-quantity">
 <button type="button" class="button minus">
@@ -174,11 +190,13 @@
 </button>
 </div>
 
+<!-- The button tag is here to create a button so users can click on it and add the product to their cart. -->
 <button type="submit" aria-label="Add to cart" class="button add-btn">
   <img src="img/icon-cart.svg" alt="" />
     Add to cart
 </button>
 
+<!-- With JavaScript this p tag will give the user(s) a warning if they misclikced on the 'add to cart' button with no quantities (in other words 0) of the products selected to add to their basket. -->
 <p class="form-alert"></p>
 </form>
 </div>
@@ -197,5 +215,8 @@
 <!-- JavaScript file link -->
 <script src="js/javascript.js"></script>
 
+<!-- The </body> ends <body> element telling the broswer that's it for the content on the page. -->
 </body>
+
+<!-- The </html> tag ends what the <html> tag started, and in this case tells the browser that's the end of what it needs to load on the page. -->
 </html>
