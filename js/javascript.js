@@ -147,3 +147,10 @@ function cloneSlider() {
     prevImage(activeImage);
   });
 }
+
+// The function here is to remove active classes. //
+function removeClass(array, className) {
+  array.forEach((element) => {
+    element.classList.remove(className);
+  });
+}
