@@ -299,7 +299,7 @@ function addToCart() {
           />
         </div>
       </div>
-      `; // The above HTMl set up is a template literal. It's used to define the HTML structure within the JavaScript code, which takes place when the function is in play, which in this case is when an item is added to the cart and the template literal adds the image thumbnail and its price. //
+      `; // The above HTML set up is a template literal. It's used to define the HTML structure within the JavaScript code, which takes place when the function is in play, which in this case is when an item is added to the cart and the template literal adds the image thumbnail and its price. //
       deleteFromCart();
       inCartCount();
       formAlert(`Product has been added to your cart successfully`, "success");
@@ -310,3 +310,29 @@ function addToCart() {
 }
 addToCart();
 
+// This funcion enables the cart products to be counted quantity wise. //
+function inCartCount() {
+  let productsCount = cartList.childElementCount;
+  inCart.textContent = productsCount;
+  if (productsCount == 0) {
+    cart.classList.remove("show-count");
+    cart.classList.add("empty");
+    checkOutBtn.style.display = "none";
+    cartList.textContent = "Your cart is empty";
+  } else {
+    cart.classList.add("show-count");
+    cart.classList.remove("empty");
+  }
+}
+inCartCount();
+
+// The function here is to enable the user to delete products in their cart. //
+function deleteFromCart() {
+  cartcontent.querySelectorAll(".cart-item").forEach((product) => {
+    product.addEventListener("click", (e) => {
+      if (!e.target.closest(".item-delete")) return;
+      product.remove();
+      inCartCount();
+    });
+  });
+}
