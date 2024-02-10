@@ -93,6 +93,8 @@ function imageNumber() {
   }
   imageNumber();
 
+// Function for showing arrows on images. //  
+
 // This function selects the image that shows the image when clicking on one of the 4 images below the previewed image. //
 function cloneSlider() {
   lightBoxContent.innerHTML = "";
@@ -112,6 +114,8 @@ function cloneSlider() {
 
   // Remove ['.hide-for-mobile'] Class Of Thumbnails Images Div //
   thumbsWrapper.classList.remove("hide-for-mobile");
+
+// Buttons for closing function. //
 
   // Adds a close button here. //
   previewImageWrapper.innerHTML += `
@@ -164,6 +168,8 @@ function formAlert(message, status) {
     addToCartForm.classList.remove("alert");
   }, 5000);
 }
+
+// Burger menu bar for mobile devices. //
 
 // Function to open the mobile menu on mobile devices. //
 function openMobileMenu() {
@@ -228,3 +234,4 @@ closeMobileNavigation.addEventListener("click", () => {
   closeOverlay();
 });
 
+// Functions for the cart features. //
