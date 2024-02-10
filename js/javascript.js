@@ -251,3 +251,62 @@ let productQuantity = document.querySelector(
 );
 let plusBtn = document.querySelector(".add-to-cart-form .plus");
 let minusBtn = document.querySelector(".add-to-cart-form .minus");
+
+// Function to add items to the cart and shows the price of the item too. //
+function addToCart() {
+  addToCartForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let getProductQuantity = productQuantity.textContent;
+    if (getProductQuantity != 0) {
+      let productTitle = document.querySelector(
+        ".product-details-wrapper .product-title"
+      ).textContent;
+      // First uses the thumbnail image as the product image once added in the cart. //
+      let productThumb = thumbImagesDivs[0]
+        .querySelector("img")
+        .getAttribute("src");
+      // productThumb = productThumb.querySelector("img").src; //
+      let productPrice = document
+        .querySelector(".product-details-wrapper .current-price")
+        .textContent.replace("$", "");
+      let totalPrice = "$" + parseInt(getProductQuantity * productPrice);
+      if (cartList.childElementCount == 0) {
+        checkOutBtn.style.display = "block";
+        cartList.innerHTML = "";
+      }
+      cartList.innerHTML += `
+      <div class="cart-item">
+        <div class="item-image">
+          <img
+            src=${productThumb}
+            alt="Product Image"
+          />
+        </div>
+        <div class="item-info">
+          <h4 class="item-title">
+            ${productTitle}
+          </h4>
+          <p class="item-price-wrapper">
+            <span class="item-price">${productPrice}</span>
+            <span class="item-count">x ${getProductQuantity}</span>
+            <span class="total-price">${totalPrice}</span>
+          </p>
+        </div>
+        <div class="item-delete">
+          <img
+            src="img/icon-delete.svg"
+            alt="Delete Product"
+          />
+        </div>
+      </div>
+      `; // The above HTMl set up is a template literal. It's used to define the HTML structure within the JavaScript code, which takes place when the function is in play, which in this case is when an item is added to the cart and the template literal adds the image thumbnail and its price. //
+      deleteFromCart();
+      inCartCount();
+      formAlert(`Product has been added to your cart successfully`, "success");
+    } else {
+      formAlert(`Can't add negative value`, "fail");
+    }
+  });
+}
+addToCart();
+
