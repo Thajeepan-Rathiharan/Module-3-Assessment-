@@ -92,3 +92,58 @@ function imageNumber() {
     totalImage.textContent = thumbImagesDivs.length;
   }
   imageNumber();
+
+// This function selects the image that shows the image when clicking on one of the 4 images below the previewed image. //
+function cloneSlider() {
+  lightBoxContent.innerHTML = "";
+  let elementToClone = document.querySelector(".product-images-wrapper");
+  let clonedElement = elementToClone.cloneNode(true);
+  // Gets the preview image wrapper class here. //
+  let previewImageWrapper = clonedElement.querySelector(
+    ".preview-image-wrapper"
+  );
+  // Gets the arrows wrapper elements. //
+  let arrowsWrapper = clonedElement.querySelector(".arrows");
+  // Gets the thumbnails images wrapper elements. //
+  let thumbsWrapper = clonedElement.querySelector(".thumbs-wrapper");
+
+  // Remove ['.hide-for-desktop'] Class Of Arrows Div //
+  arrowsWrapper.classList.remove("hide-for-desktop");
+
+  // Remove ['.hide-for-mobile'] Class Of Thumbnails Images Div //
+  thumbsWrapper.classList.remove("hide-for-mobile");
+
+  // Adds a close button here. //
+  previewImageWrapper.innerHTML += `
+  <div class="close-lightbox">
+    <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+      <title>close</title>
+      <path
+        d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+        fill="#FFF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+  `;
+
+  // Declares the close button here. //
+  let closeBtn = previewImageWrapper.querySelector(".close-lightbox");
+  lightBoxContent.appendChild(clonedElement);
+
+  // This function is to close the light box by making an [x] close icon. //
+  closeBtn.addEventListener("click", closeLightBox);
+  thumbImagesDivs = Array.from(
+    document.querySelectorAll(".lightbox-content .thumb-image")
+  );
+  nextBtn = document.querySelector(".lightbox-content .arrows .next");
+  prevBtn = document.querySelector(".lightbox-content .arrows .prev");
+  activeImage = document.querySelector(".lightbox-content .preview-image");
+  showThumbsAsActive(thumbImagesDivs, activeImage);
+  nextBtn.addEventListener("click", () => {
+    nextImage(activeImage);
+  });
+  prevBtn.addEventListener("click", () => {
+    prevImage(activeImage);
+  });
+}
