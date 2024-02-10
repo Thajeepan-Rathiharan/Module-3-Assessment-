@@ -336,3 +336,17 @@ function deleteFromCart() {
     });
   });
 }
+
+cart.addEventListener("click", (e) => {
+  let cartIcon = e.target.closest(".cart-icon");
+  cartIcon ? cart.classList.toggle("open") : "";
+});
+
+// This event handles how many items will be added via the plus [+] and minus [-] buttons. //
+plusBtn.addEventListener("click", () => {
+  productQuantity.textContent++;
+});
+
+minusBtn.addEventListener("click", () => {
+  if (productQuantity.textContent != 0) productQuantity.textContent--;
+});
