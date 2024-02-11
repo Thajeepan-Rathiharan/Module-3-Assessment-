@@ -1,3 +1,5 @@
+/* OVERALL PAGE STUFF */
+/* The * here is a universal selector and the properties within this affects everything on the page. */
 *,
 *:before,
 *::after {
@@ -6,26 +8,33 @@
   box-sizing: border-box;
 }
 
+/* The class properties within this class name affects the HTML as a whole. */
 html {
   font-size: 100%;
   scroll-behavior: smooth;
 }
 
+/* The class properties within this class name affect those within the body tag on the HTML code. */
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   color: #68707d;
 }
 
+/* The properties within the anchor element are the only ones affected with the property within this CSS rule. */
 a {
   text-decoration: none;
 }
 
+/* MENU BAR - DESKTOP */
+/* The properties within the unlisted and ordered list element are the only ones affected within this rule. */
 ul,
 ol {
   list-style: none;
 }
 
+/* IMAGE SETTINGS */
+/* The properties within the anchor element are the only ones affected with the properties within this CSS rule. */
 img {
   display: block;
   max-width: 100%;
@@ -33,11 +42,15 @@ img {
   background-size: cover;
 }
 
+/* TEXT STUFF */
+/* The properties within the p element are the only ones affected with the properties within this CSS rule. */
 p {
   line-height: 1.7;
   font-size: 16px;
 }
 
+/* BUTTON STUFF */
+/* The properties with the button tag and those that have the 'button' class name are the only ones affected with the properties within this CSS rule. */
 button,
 .button {
   border: none;
@@ -50,37 +63,45 @@ button,
   transition: 0.2s linear;
 }
 
+/* The properties that are in the button element that has the 'focus-visible' class name and the other element that has the'focus-visible' class name are the only ones affected with the properties within this CSS rule. */
 button:focus-visible,
 .button:focus-visible {
   outline: 1px dashed #68707d;
 }
 
+/* The properties with the button tag and those that have the 'hover' class are the only ones affected with the properties within this CSS rule. */
 button:hover,
 .button:hover {
   opacity: 0.7;
 }
 
+/* The CSS rules here only apply to those elements that have the class name 'container'. */
 .container {
   padding-right: 24px;
   padding-left: 24px;
 }
 
+/* The CSS rule here only applies to the elements that have the class name 'flex'. */
 .flex {
   display: flex;
 }
-  
+
+/* The CSS rule here only applies to the elements that have the class name 'flex-ai-c'. */
 .flex-ai-c {
   align-items: center;
 }
-  
+ 
+/* The CSS rule here only applies to the elements that have the class name 'flex-jc-sb'. */
 .flex-jc-sb {
   justify-content: space-between;
 }
   
+/* The CSS rule here only applies to the elements that have the class name 'flex-jc-c'. */
 .flex-jc-c {
   justify-content: center;
 }
-  
+
+/* The properties within this CSS rule take effect on the elements that have the class name 'overlay'. */  
 .overlay {
   position: fixed;
   top: 0;
@@ -94,21 +115,26 @@ button:hover,
   transform: 0.2s linear;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'overlay' and 'open'. */  
 .overlay.open {
   opacity: 1;
   visibility: visible;
 }
   
+/* MENU BAR - MOBILE PHONE */
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'nav'. */
 .header nav {
   position: relative;
   padding: 25px 0;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'toggle-menu'. */
 .header .toggle-menu {
   margin-right: 15px;
   cursor: pointer;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'mobile-navigation'. */
 .header .mobile-navigation {
   position: fixed;
   top: 0;
@@ -122,16 +148,19 @@ button:hover,
   transition: transform 0.2s linear;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'header', 'mobile-navigation' and 'open'. */
 .header .mobile-navigation.open {
   transform: translateX(0);
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'header', 'mobile-navigation' and 'close-menu'. */
 .header .mobile-navigation .close-menu {
   display: block;
   margin-bottom: 55px;
   cursor: pointer;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'mobile-navigation', as well as the anchor element. */
 .header .mobile-navigation a {
   display: block;
   color: #1d2025;
@@ -141,15 +170,19 @@ button:hover,
   transition: 0.2s linear;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'header', 'mobile-navigation' and 'hover', as well as the anchor element. */
 .header .mobile-navigation a:hover {
   padding-left: 10px;
   color: #68707d;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'controls'. */
 .header .controls {
   gap: 22px;
 }
 
+/* USER PROFILE ICON STUFF */
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'user-avatar'. */
 .header .user-avatar {
   width: 30px;
   height: 30px;
@@ -160,27 +193,33 @@ button:hover,
   transition: 0.2s linear;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'header', 'user-avatar' and 'hover'. */
 .header .user-avatar:hover {
   border-color: #ff7d1a;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'header' and 'user-avatar', as well as the img element. */
 .header .user-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-  
+ 
+/* CART STUFF*/
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'open' and 'cart-list-wrapper'. */
 .cart.open .cart-list-wrapper {
   top: calc(100% + 10px);
   opacity: 1;
   visibility: visible;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'cart-icon' and 'in-cart'. */
 .cart.show-count .cart-icon .in-cart {
   opacity: 1;
   visibility: visible;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'empty' and 'cart-content'. */
 .cart.empty .cart-content {
   height: 185px;
   font-weight: bold;
@@ -190,11 +229,13 @@ button:hover,
   font-size: 17px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart' and 'cart-icon'. */
 .cart .cart-icon {
   position: relative;
   cursor: pointer;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'cart-icon' and 'in-cart'. */
 .cart .cart-icon .in-cart {
   position: absolute;
   top: -7px;
@@ -214,14 +255,17 @@ button:hover,
   transition: 0.2s linear, visibility 0.3s linear;
   }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart' and 'cart-icon', as well as the svg and path HTML elements. */
 .cart .cart-icon svg path {
   transition: 0.2s linear;
 }
-  
+ 
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart' 'cart-icon' and 'hover', as well as the path HTML element. */
 .cart .cart-icon:hover path {
   fill: #1d2025;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart' and 'cart-list-wrapper'. */
 .cart .cart-list-wrapper {
   position: absolute;
   top: calc(100% + 20px);
@@ -237,16 +281,19 @@ button:hover,
   transition: 0.2s linear, visibility 0.3s linear;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'cart-list-wrapper' and 'cart-heading'. */
 .cart .cart-list-wrapper .cart-heading {
   color: #1d2025;
   padding: 25px;
   border-bottom: 1px solid #b6bcc8;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart', 'cart-list-wrapper' and 'cart-content'. */
 .cart .cart-list-wrapper .cart-content {
   padding: 25px 25px 30px 25px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-content', 'cart-list' and 'cart-item'. */
 .cart-content .cart-list .cart-item {
   display: flex;
   justify-content: flex-start;
@@ -254,6 +301,7 @@ button:hover,
   gap: 15px;
   }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-content' and 'checkout-btn'. */
 .cart-content .checkout-btn {
   width: 100%;
   color: white;
@@ -261,59 +309,72 @@ button:hover,
   background-color: #ff7d1a;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list' and 'cart-item'. */
 .cart-list .cart-item {
   margin-bottom: 25px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item' and 'item-image'. */
 .cart-list .cart-item .item-image {
   flex: 0 0 50px;
   overflow: hidden;
   border-radius: 6px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item' and 'item-info'. */
 .cart-list .cart-item .item-info {
   flex: auto;
   color: #68707d;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item' and 'item-title'. */
 .cart-list .cart-item .item-title {
   font-weight: 400;
   margin-bottom: 5px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item' and 'item-price-wrapper'. */
 .cart-list .cart-item .item-price-wrapper {
   display: flex;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item', 'item-price-wrapper' and 'item-count'. */
 .cart-list .cart-item .item-price-wrapper .item-count {
   margin: 0 10px 0 5px;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item', 'item-price-wrapper' and 'total-price'. */
 .cart-list .cart-item .item-price-wrapper .total-price {
   font-weight: bold;
   font-size: 18px;
   color: #1d2025;
 }
-  
+ 
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item' and 'item-delete'. */
 .cart-list .cart-item .item-delete {
   transition: 0.2s linear;
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item', 'item-delete' and 'hover'. */
 .cart-list .cart-item .item-delete:hover {
   cursor: pointer;
   transform: scale(1.08);
 }
   
+/* The properties within this CSS rule take effect on the elements that have the class names 'cart-list', 'cart-item', 'item-delete' and 'hover', as well as the img HTML element. */
 .cart-list .cart-item .item-delete:hover img {
   filter: invert(17%) sepia(55%) saturate(7234%) hue-rotate(341deg) brightness(88%) contrast(95%);
 }
   
+/* PRODUCT IMAGES STUFF */
+/* The properties within this CSS rule take effect on the elements that have the class names 'procut-wrapper' and 'container'. */
 .product-wrapper .container {
   display: flex;
   flex-direction: column;
   padding: 0;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class name 'product-images-wrapper'. */
 .product-images-wrapper {
   display: flex;
   flex-direction: column;
@@ -321,18 +382,22 @@ button:hover,
   user-select: none;
 }
 
+/* The properties within this CSS rule take effect on the elements that have the class name 'preview-images-wrapper'. */
 .preview-image-wrapper {
   position: relative;
   cursor: pointer;
 }
 
+/* ARROWS FOR SCROLLING THROUGH PRODUCT IMAGES */
+/* The properties within this CSS rule take effect on the elements that have the class name 'arrows'. */
 .arrows {
   position: absolute;
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
 }
-  
+
+/* The properties within this CSS rule take effect on the elements, specifically div elements that have the class name 'arrows'. */
 .arrows > div {
   position: absolute;
   width: 40px;
@@ -345,41 +410,51 @@ button:hover,
   cursor: pointer;
 }
   
+/* The properties within this CSS rule take effect on the elements, specifically the img element within div elements that have the class name 'arrows'. */
 .arrows > div img {
   transition: 100ms linear;
 }
-  
+
+/* The properties within this CSS rule take effect on the elements, specifically the img element within div elements that have the class name 'arrows' and 'hover'. */
 .arrows > div:hover img {
   filter: invert(52%) sepia(91%) saturate(2132%) hue-rotate(349deg) brightness(108%) contrast(101%);
 }
   
+/* The property in this CSS rule only has effect on elements that have the class name 'arrows' and 'next'. */
 .arrows .next {
   left: calc(100% - (15px + 40px));
 }
   
+/* The property in this CSS rule only has effect on elements that have the class name 'arrows' and 'prev'. */
 .arrows .prev {
   left: 15px;
 }
   
+/* The properties in this CSS rule only has effect on elements that have the class name 'count'. */
 .count {
   position: absolute;
   bottom: -35px;
   display: none;
 }
 
+/* The property in this CSS rule only has effect on elements that have the class name 'count', and is in a p element. */
 .count p {
   font-size: 16px;
 }
   
+/* The property in this CSS rule only has effect on elements that have the class name 'count', and is in a span element. */
 .count span {
   font-weight: bold;
 }
   
+/* THUMBNAIL SETTINGS FOR SMALL PRODUCT IMAGES ON DESKTOP */
+/* The properties in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper'. */
 .thumbs-wrapper {
   display: flex;
   gap: 25px;
 }
   
+/* The properties in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper' that are specifically inside a div element. */
 .thumbs-wrapper > div {
   position: relative;
   max-width: 92px;
@@ -391,14 +466,17 @@ button:hover,
   transition: 0.2s linear;
 }
   
+/* The property in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper', and is in a div element with the class 'active'. */
 .thumbs-wrapper > div.active {
   border-color: #ff7d1a;
 }
   
+/* The property in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper', and is in a div element with the class 'hover' and 'after'. */
 .thumbs-wrapper > div:hover::after, .thumbs-wrapper > div.active::after {
   opacity: 1;
 }
   
+/* The properties in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper', and is in a div element with the class 'after'. */
 .thumbs-wrapper > div::after {
   content: "";
   position: absolute;
@@ -411,17 +489,21 @@ button:hover,
   transition: 0.2s linear;
 }
   
+/* The properties in this CSS rule only has effect on elements that have the class name 'thumbs-wrapper', that are in a div element that has an img element. */
 .thumbs-wrapper > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
   
+/* PRODUCT DETAIL STUFF */
+/* The CSS rules in this property only affects elements that have the class name 'product-details-wrapper'. */
 .product-details-wrapper {
   padding: 24px;
   font-weight: 700;
 }
 
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'product-brand'. */
 .product-details-wrapper .product-brabd {
   font-size: 14px;
   color: #ff7d1a;
@@ -430,6 +512,7 @@ button:hover,
   text-transform: uppercase;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'product-title'. */
 .product-details-wrapper .product-title {
   margin-bottom: 25px;
   color: #1d2025;
@@ -437,11 +520,13 @@ button:hover,
   line-height: 1.1;
 }
 
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'product-description'. */
 .product-details-wrapper .product-description {
   margin-bottom: 30px;
   font-weight: 400;
 }
-  
+
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'current-price-wrapper'. */
 .product-details-wrapper .current-price-wrapper {
   display: flex;
   align-items: center;
@@ -449,11 +534,13 @@ button:hover,
   margin-bottom: 15px;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'current-price-wrapper' and 'current-price'. */
 .product-details-wrapper .current-price-wrapper .current-price {
   color: #1d2025;
   font-size: 30px;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'current-price-wrapper' and 'discount'. */
 .product-details-wrapper .current-price-wrapper .discount {
   background: #ffede0;
   color: #ff7d1a;
@@ -461,22 +548,27 @@ button:hover,
   border-radius: 6px;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'previous-price-wrapper' and 'previous-price'. */
 .product-details-wrapper .previous-price-wrapper .previous-price {
   color: #b6bcc8;
   text-decoration: line-through;
   font-size: 17px;
 }
-  
+
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'add-to-cart-form'. */  
 .product-details-wrapper .add-to-cart-form {
   position: relative;
   margin-top: 40px;
 }
 
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' with 'alert' and 'form-alert'. */ 
 .product-details-wrapper .add-to-cart-form.alert .form-alert {
   top: calc(100% + 10px);
   opacity: 1;
 }
-  
+
+/* PRODUCT QUANTITY STUFF */
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'product-quantity'. */ 
 .product-details-wrapper .add-to-cart-form .product-quantity {
   flex-basis: 155px;
   display: flex;
@@ -488,21 +580,27 @@ button:hover,
   background-color: #f7f8fd;
 }
   
+/* The CSS rule in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'product-quantity-num'. */ 
 .product-details-wrapper .add-to-cart-form .product-quantity-num {
   font-size: 17px;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' 'add-to-cart-form' and 'plus'.
+   This set of CSS rules also affect the elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'minus'. */ 
 .product-details-wrapper .add-to-cart-form .plus,
 .product-details-wrapper .add-to-cart-form .minus {
   cursor: pointer;
   transition: 0.2s linear;
 }
   
+/* The CSS rule in this property only affects elements that have the class names 'product-details-wrapper' 'add-to-cart-form', 'plus' and 'hover'.
+   This CSS rule also affect the elements that have the class names 'product-details-wrapper', 'add-to-cart-form', 'minus' and 'hover'. */ 
 .product-details-wrapper .add-to-cart-form .plus:hover,
 .product-details-wrapper .add-to-cart-form .minus:hover {
   opacity: 0.6;
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'add-btn'. */
 .product-details-wrapper .add-to-cart-form .add-btn {
   display: flex;
   align-items: center;
@@ -517,10 +615,12 @@ button:hover,
   box-shadow: 0 15px 15px #ffeadb;
 }
 
+/* The CSS rule in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'add-btn' with an img element. */
 .product-details-wrapper .add-to-cart-form .add-btn img {
   filter: brightness(100);
 }
   
+/* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form' and 'form-alert'. */
 .product-details-wrapper .add-to-cart-form .form-alert {
   position: absolute;
   top: calc(100% + 1px);
@@ -528,14 +628,18 @@ button:hover,
   transition: 0.2s linear;
 }
   
+/* The CSS rule in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form', 'form-alert' and 'success'. */
 .product-details-wrapper .add-to-cart-form .form-alert.success {
   color: #4cae4f;
 }
   
+/* The CSS rule in this property only affects elements that have the class names 'product-details-wrapper', 'add-to-cart-form', 'form-alert' and 'fail'. */
 .product-details-wrapper .add-to-cart-form .form-alert.fail {
   color: #db143c;
 }
   
+/* LIGHTBOX FOR PRODUCT IMAGES STUFF */
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper'. */
 .lightbox-wrapper {
   position: fixed;
   top: 0;
@@ -551,40 +655,48 @@ button:hover,
   transition: opacity 0.2s linear, visibility 0.3s linear;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper' and 'open'. */
 .lightbox-wrapper.open {
   opacity: 1;
   visibility: visible;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper' and 'lightbox-content'. */
 .lightbox-wrapper .lightbox-content {
   max-width: 90%;
   margin: auto;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper', 'lightbox-content' and 'product-images-wrapper'. */
 .lightbox-wrapper .lightbox-content .product-images-wrapper {
   max-width: 500px;
   gap: 35px;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper' and 'arrows' that are specifically in a div element together. */
 .lightbox-wrapper .preview-image-wrapper .arrows > div {
   width: 60px;
   height: 60px;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper', 'arrows' and 'next'. */
 .lightbox-wrapper .preview-image-wrapper .arrows .next {
   left: 100%;
   transform: translateX(-50%);
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper', 'arrows' and 'prev'. */
 .lightbox-wrapper .preview-image-wrapper .arrows .prev {
   left: 0;
   transform: translateX(-50%);
 }
   
+/* The CSS rule in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper' and 'count'. */
 .lightbox-wrapper .preview-image-wrapper .count {
   color: #fff;
 }
   
+/* The CSS rules in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper' and 'close-lightbox'. */
 .lightbox-wrapper .preview-image-wrapper .close-lightbox {
   position: absolute;
   right: 0;
@@ -597,22 +709,27 @@ button:hover,
   cursor: pointer;
 }
   
+/* The CSS rule in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper' and 'close-lightbox', that are in svg and path HTML elements. */
 .lightbox-wrapper .preview-image-wrapper .close-lightbox svg path {
   transition: 0.2s linear;
 }
   
+/* The CSS rule in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper', 'close-lightbox' and 'hover', that are in svg and path HTML elements. */
 .lightbox-wrapper .preview-image-wrapper .close-lightbox:hover svg path {
   fill: #ff7d1a;
 }
   
+/* The CSS rule in this property only affects elements with the class name 'lightbox-wrapper', 'previous-image-wrapper' and 'close-lightbox' that are in img HTML element. */
 .lightbox-wrapper .preview-image-wrapper .close-lightbox img {
   filter: brightness(100%);
 }
   
+/* The following CSS rule takes place in elements with the class names 'lightbox-wrapper' and 'thumbs-wrapper'. */
 .lightbox-wrapper .thumbs-wrapper {
   justify-content: center;
 }
   
+/* The following CSS rules take place in elements with the class names 'lightbox-wrapper' and 'thumbs-wrapper' that are inside of a div element. */
 .lightbox-wrapper .thumbs-wrapper > div {
   width: 95px;
   height: 95px;
@@ -620,23 +737,30 @@ button:hover,
 
 /* Media queries that set certain class properties to tags in the HTML code so the website is responsive on both desktop and mobile phone devices.
    This is mainly done so parts of the website such as image sizes and most importantly the navigation menu bars don't clash with each other.  */  
-
 @media (max-width: 39.9375em) {
+/* The class properties here take place with elements that have the 'count' class name. */  
   .count {
   right: 15px;
   }
 }
   
 @media (min-width: 40em) {
-  .header nav {
+/* The class properties here take place with nav HTML elements that have the class name 'header'. */    
+.header nav {
   border-bottom: 1px solid #b6bcc8;
   }
+
+/* The class properties here take place with elements that have the class name 'header' and 'mobile-navigation'. */  
 .header .mobile-navigation {
   width: 350px;
   }
+
+/* The class properties here take place with elements that have the class name 'cart', 'open' and 'cart-list-wrapper'. */  
 .cart.open .cart-list-wrapper {
   top: calc(100% + -15px);
   }
+
+/* The class properties here take place with elements that have the class name 'cart' and 'cart-list-wrapper'. */    
 .cart .cart-list-wrapper {
   top: 100%;
   width: 360px;
@@ -644,54 +768,78 @@ button:hover,
   left: initial;
   transform: initial;
   }
+
+/* The class properties here take place with elements that have the class name 'product-wrapper' and 'container'. */   
 .product-wrapper .container {
   padding: 90px 24px;
   }
+
+/* The class properties here take place with elements that have the class name 'product-images-wrapper'. */   
 .product-images-wrapper {
   max-width: 440px;
   margin: auto;
   }
+
+/* The class properties here take place with elements that have the class name 'preview-image-wrapper' and 'preview-image'. */   
 .preview-image-wrapper .preview-image {
   border-radius: 15px;
   }
+
+/* The class properties here take place with elements that have the class name 'product-details-wrapper'. */    
 .product-details-wrapper {
   padding: 45px 0;
   }
+
+/* The class properties here take place with elements that have the class name 'product-details-wrapper' and 'add-to-cart-form'. */  
 .product-details-wrapper .add-to-cart-form {
   display: flex;
   align-items: center;
   gap: 15px;
   }
+
+/* The class properties here take place with elements that have the class name 'product-details-wrapper', 'add-to-cart-form' and 'add-btn'. */    
 .product-details-wrapper .add-to-cart-form .add-btn {
   margin-top: 0;
   }
 }
   
 @media (max-width: 63.9375em) {
-  .hide-for-mobile {
+/* The class properties here take place with elements that have the class name 'hide-for-mobile'. */    
+.hide-for-mobile {
   display: none !important;
   }
-  .count {
+
+/* The class properties here take place with elements that have the class name 'count'. */  
+.count {
   right: 4px;
   display: block;
   }
 }
   
 @media (min-width: 64em) {
-  .container {
+/* The class properties here take place with elements that have the class name 'container'. */  
+.container {
   max-width: 1110px;
   margin: 0 auto;
   }
+
+/* The class properties here take place with elements that have the class name 'hide-for-desktop'. */    
 .hide-for-desktop {
   display: none;
   }
+ 
+/* The class properties here take place with elements that have the class name 'header' that is in a nav HTML element. */    
 .header nav {
   padding: 45px 0;
   }
+
+/* The class properties here take place with elements that have the class name 'header' and 'main-navigation'. */  
 .header .main-navigation {
   align-self: flex-start;
   margin-left: 50px;
   }
+
+/* The class properties here take place with elements that have the class name 'header' and 'main-navigation' in an anchor element. */   
 .header .main-navigation a {
   position: relative;
   font-size: 14px;
@@ -699,9 +847,13 @@ button:hover,
   margin-right: 33px;
   transition: 0.2s linear;
   }
+
+/* The class properties here take place with elements that have the class name 'header' and 'main-navigation' in an anchor element with the class 'hover'. */   
 .header .main-navigation a:hover {
   color: #1d2025;
   }
+
+/* The class properties here take place with elements that have the class name 'header' and 'main-navigation' in an anchor element with the class 'after'. */   
 .header .main-navigation a::after {
   position: absolute;
   content: "";
@@ -713,30 +865,46 @@ button:hover,
   background-color: #ff7d1a;
   transition: 0.2s linear;
   }
-  .header .main-navigation a:hover::after {
+
+/* The class properties here take place with elements that have the class name 'header' and 'main-navigation' in an anchor element with the class 'hover' and 'after'. */  
+.header .main-navigation a:hover::after {
   opacity: 1;
   }
-  .header .controls {
+
+/* The class properties here take place with elements that have the class name 'header' and 'controls'. */ 
+.header .controls {
   gap: 40px;
   }
-  .header .user-avatar {
+
+/* The class properties here take place with elements that have the class name 'header' and 'user-avatar'. */ 
+.header .user-avatar {
   width: 50px;
   height: 50px;
   }
+ 
+/* The class properties here take place with elements that have the class name 'cart', 'open' and 'cart-list-wrapper'. */   
 .cart.open .cart-list-wrapper {
   top: calc(100% + -30px);
   }
+
+/* The class properties here take place with elements that have the class name 'cart' and 'cart-list-wrapper'. */   
 .cart .cart-list-wrapper {
   top: calc(100% + -15px);
   }
+
+/* The class properties here take place with elements that have the class name 'product-wrapper' and 'container'. */   
 .product-wrapper .container {
   flex-direction: row;
   gap: 120px;
   padding: 90px 50px;
   }
+
+/* The class properties here takes place with elements that have the class name 'product-details-wrapper'. */   
 .product-details-wrapper {
   padding: 65px 0;
   }
+
+/* The class properties here take place with elements that have the class name 'product-details-wrapper' 'product-title'. */   
 .product-details-wrapper .product-title {
   font-size: 48px;
   margin-bottom: 40px;
