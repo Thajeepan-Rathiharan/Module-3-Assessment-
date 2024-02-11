@@ -504,7 +504,7 @@ button:hover,
 }
 
 /* The CSS rules in this property only affects elements that have the class names 'product-details-wrapper' and 'product-brand'. */
-.product-details-wrapper .product-brabd {
+.product-details-wrapper .product-brand {
   font-size: 14px;
   color: #ff7d1a;
   letter-spacing: 1px;
