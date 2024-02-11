@@ -112,7 +112,7 @@ button:hover,
   background-color: rgba(0, 0, 0, 0.75);
   opacity: 0;
   visibility: hidden;
-  transform: 0.2s;
+  transform: 0.2s linear;
 }
   
 /* The properties within this CSS rule take effect on the elements that have the class names 'overlay' and 'open'. */  
