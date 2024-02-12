@@ -2,7 +2,7 @@
 
 ## Table of contents:
 
-- [Overview](#overview)
+- [Overview of the project](#overview-of-the-project)
  - [The challenge](#the-challenge)
  - [Website link](#website)
 - [About the project](#about-the-project)
@@ -12,7 +12,7 @@
 - [Credits](#credits)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
+## Overview of the project
 
 ### The challenge
 
@@ -56,6 +56,8 @@ The website was deployed to Github in the following method:
 
 What I have learnt from this project is that it is important to pay attention to what I am typing especially when it comes to making a website that is responsive on more than one platform, as a single spelling error can either not make the function, variable or event work or even the CSS properties to not work. Not only that but I learnt that as a frontend developer it is a must to keep checking the website after a new addition to the code to see that content isn't overlapping and to see if it is functioning as I expected it to in my head when writing the code.
 I overcame my problems by watching live solution videos on YouTube for helping me be able to compare my code to theirs and see where I went wrong and fix the issue and by updating my code on two different tabs so I can see where my spelling errors are and fix it immediately.
+
+The main thing for me to take from this task is that patience is always needded when it comes to coding, whether it is to make a website on a topic or brand.
 
 ## Credits
 
