@@ -7,6 +7,7 @@
  - [Website link](#website)
 - [About the project](#about-the-project)
 - [Created using](#created-using)
+- [Deployment of site](#deployment-of-site)
 - [Learning outcome](#learning-outcome)
 - [Credits](#credits)
 - [Acknowledgments](#acknowledgments)
@@ -30,13 +31,26 @@ Users should be able to:
 
 This is the third project in the Front-End Plus course at the Learning People which is a task from the Frontend Mentor. The task is to recreate an e-commerce web page using the resources they gave and I used the knowledge I've gained from the Front-End Plus course with HTML, CSS and JavaScript and recreated the e-commerce product website they have shown on their site (https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6) to the best of my ability. 
 
-## Created with
+## Created using
 
 1. Visual Studio Code editor
 2. Git source control
 3. HTML
 4. CSS
 5. JavaScript
+
+## Deployment of site
+
+The website was deployed to Github in the following method:
+  
+1. Going to my GitHub repository on GitHub.
+2. Clicking on "Settings" in my repository.
+3. Clicking on "Pages"(tab on the left sidebar) in my repository.
+4. Scrolling down to "Build and deployment"/"Source" section.
+5. Find the sub-section "Branch".
+6. From the drop-down menu "none"/"select branch" and choose source "main".
+7. Click 'Save'.
+8. Then waited until I saw a link for the deployed page within GitHub Page section. This can take a while. Once the page updates I got this message: My site is live at https://thajeepan-rathiharan.github.io/Module-3-Assessment-/.
 
 ## Learning outcome
 
